@@ -31,7 +31,9 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Due Date</th>
+                <th>Status</th>
                 <th width="280px">Action</th>
+                
             </tr>
             
             @php $i = 0; @endphp
@@ -41,6 +43,7 @@
                 <td>{{ $todo->name }}</td>
                 <td>{{ $todo->description }}</td>
                 <td>{{ $todo->due_date }}</td>
+                <td>{{ $todo->status}}</td>
                 <td>
                     <form action="{{ route('todos.destroy',$todo->id) }}" method="POST">
 

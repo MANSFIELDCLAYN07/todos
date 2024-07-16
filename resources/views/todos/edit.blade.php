@@ -41,16 +41,31 @@
                     <textarea class="form-control" style="height:150px" name="description" placeholder="Description">{{ $todo->description }}</textarea>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Due Date:</strong>
-                    <input type="date" name="due_date" value="{{ $todo->due_date }}" class="form-control" placeholder="Due Date">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+            <div class="d-flex justify-content-between align-items-end">
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="form-group">
+            <strong>Status:</strong>
+            <select name="status" class="form-control">
+                <option value="pending" {{ $todo->status == 'pending' ? 'selected' : '' }}>Pending</option>
+                <option value="completed" {{ $todo->status == 'completed' ? 'selected' : '' }}>Completed</option>
+            </select>
         </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="form-group">
+            <strong>Due Date:</strong>
+            <input type="date" name="due_date" value="{{ $todo->due_date }}" class="form-control" placeholder="Due Date">
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-10 text-center">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>
+
 
     </form>
 </div>
